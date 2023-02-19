@@ -7,4 +7,4 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/teste', (req, res) => res.send('OK!'));
-app.listen(8080, () => console.log('Executando'))...
+app.listen(8080, () => console.log('Executando...'));
