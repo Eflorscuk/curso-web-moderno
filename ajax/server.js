@@ -26,4 +26,19 @@ app.post('/upload', (req, res) => {
     });
     res.end('Concluído com sucesso');
 });
+app.post('/formulario', (req, res) => {
+    res.send({
+        ...req.body,
+        id: 7
+    })
+})
+app.get('/parOuImpar', (req, res) => {
+    // req.body recebe do front
+    // req.query recebe do front ?numero=1
+    // req.params recebe do front => '/parOuImpar/:numero
+    const par = parseInt(req.query.numero) % 2 === 0;
+    req.send({
+        resultado: par ? 'par' : 'impar'
+    });
+})
 app.listen(8080, () => console.log('Executando...'));
